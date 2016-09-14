@@ -18,6 +18,12 @@ element.oncontextmenu = function(event) {
 			onclick: function(event) {
 				alert(event);
 			}
+		}, {
+			type: 'infos',
+			text: 'another one'
+		}, {
+			type: 'html',
+			text: '<div>and the last</div>'
 		}
 	], event, {
 		arrow: true, 
