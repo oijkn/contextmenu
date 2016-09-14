@@ -114,10 +114,18 @@ hideContextMenuChild(0) //hide all submenu
 ### addEvents
 add multiple events with addEventListener or attachEvent
 ```javascript
-addEvents(window, 'keydown resize dragover click contextmenu DOMMouseScroll wheel mousewheel touch', hideContextMenu);
+addEvents(
+	window, //element
+	'keydown resize dragover click contextmenu DOMMouseScroll wheel mousewheel touch', //events
+	hideContextMenu //handler
+);
 ```
 ### removeEvents
 remove multiple events with removeEventListener or detachEvent
 ```javascript
-removeEvents(window, 'keydown resize dragover click contextmenu DOMMouseScroll wheel mousewheel touch', hideContextMenu);
+removeEvents(
+	window, //element
+	'keydown resize dragover click contextmenu DOMMouseScroll wheel mousewheel touch', //events
+	hideContextMenu //handler
+);
 ```
