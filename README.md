@@ -12,7 +12,14 @@ element.oncontextmenu = function(event) {
 			text: 'click me!',
 			sub: [{
 				type: 'button',
-				text: 'click me!'
+				text: 'submenu 1',
+				sub: [{
+					type: 'infos',	
+					text: '1'
+					}, {
+					type: 'infos',	
+					text: '2'
+				}]
 			}],
 			onclick: function(event) {
 				alert(event);
