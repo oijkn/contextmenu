@@ -13,13 +13,15 @@ element.oncontextmenu = function(event) {
 			sub: [{
 				type: 'button',
 				text: 'submenu 1',
-				sub: [{
-					type: 'infos',	
-					text: 'sub submenu 1'
+				sub: [
+					{
+						type: 'infos',	
+						text: 'sub submenu 1'
 					}, {
-					type: 'infos',	
-					text: 'sub submenu 2'
-				}]
+						type: 'infos',	
+						text: 'sub submenu 2'
+					}
+				]
 			}],
 			onclick: function(event) {
 				alert(event);
