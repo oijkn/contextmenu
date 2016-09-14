@@ -56,7 +56,8 @@ Objects array
 ### menu.object.text
 string or HTML code when type: 'html'
 ### menu.object.type
-'button', 'infos', 'html', 'button' by default
+'button', 'infos' or 'html'. 'button' by default
+
 when 'html', you can put HTML code on the text
 	
 	type: 'html',
