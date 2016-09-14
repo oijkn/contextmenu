@@ -83,7 +83,7 @@ add 'contextmenu-active' class to element when the menu is active
 define a width for the menu
 
 	width: '55%'
-	width: '234px' == width: '234'
+	width: '234px' // (width: '234' id the same)
 	
 ### options.margin
 add margin	
