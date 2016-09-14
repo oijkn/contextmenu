@@ -4,10 +4,10 @@ A simple contextmenu module in Javascript Vanilla
 ## How to use
 
 ```javascript
-showContextMenu(menu, event [, options]);
+showContextMenu(event, menu, [, options]);
 
 element.oncontextmenu = function(event) {
-	showContextMenu([
+	showContextMenu(event, [
 		{
 			type: 'button',
 			text: 'click me!',
@@ -25,7 +25,7 @@ element.oncontextmenu = function(event) {
 			type: 'html',
 			text: '<div>and the last</div>'
 		}
-	], event, {
+	], {
 		arrow: true, 
 		align: 'center', 
 		element: element, 

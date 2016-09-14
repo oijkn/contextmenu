@@ -39,7 +39,7 @@ contextMenuImgUp.src = "img/arrow-contextmenu-up.png";
 var contextMenuImgDown = new Image();
 contextMenuImgDown.src = "img/arrow-contextmenu-down.png";
 
-function showContextMenu(content, e, args) {
+function showContextMenu(e, content, args) {
 	currentContainer = document.querySelectorAll('.contextmenu-container');
 	var elementActive = args && args.element && args.element.classList.contains('contextmenu-active');
 	var hilightActive = args && args.toggleClass && args.toggleClass.classList.contains('contextmenu-active');
@@ -119,7 +119,7 @@ function showContextMenu(content, e, args) {
 					var contentSub = content[i].sub;
 					newSpan.onmouseenter = function(e) {
 						hideContextMenuChild(containerSubLevel);
-						showContextMenu(contentSub, e, {isSub: containerSubLevel+1, idParent: this.parentNode.id});
+						showContextMenu(e, contentSub, {isSub: containerSubLevel+1, idParent: this.parentNode.id});
 					}
 				}
 				else {
