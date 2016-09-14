@@ -1,6 +1,5 @@
 # contextmenu
-A simple contextmenu module in Javascript Vanilla
-[DEMO](http://app.moonshark.fr/contextmenu/)
+A simple contextmenu module in Javascript Vanilla. [DEMO](http://app.moonshark.fr/contextmenu/)
 ## How to use
 
 ```javascript
