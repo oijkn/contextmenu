@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>contextmenu</title>
+    <meta content="" name="description">
+    <meta content="" name="author">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+    <link href="css/contextmenu.css" rel="stylesheet">
+    <script src="js/contextmenu.js"></script>
+    <style>
+	    html {
+		    background-color: #303030;
+		    font-family: 'Roboto';
+	    }
+	    .button:hover {
+		    background-color: black;
+	    }
+	    .button {
+		    font-size: 13px;
+		    position: absolute;
+		    cursor: pointer;
+		    padding: 10px 14px;
+		    background-color: #202020;
+		    display: inline-block;
+		    color: #AAA;
+		    -webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+	    }
+	    .button.contextmenu-active {
+		    background-color: #AAA;
+		    color: black;
+	    }
+	    @keyframes bump {
+		  0%   { transform: scale(0.5) }
+		  50% { transform: scale(1) }
+		  100% { transform: scale(0.5) }
+		}
+	    .bidule {
+		    display: block;
+		    margin: 20px;
+		    padding: 20px;
+		    text-align: center;
+		    line-height: 30px;
+		    width: 200px;
+		    height: 30px;
+		    background-color: #BADA55;
+		    color: black;
+		    animation: bump 1s infinite ease;
+	    }
+    </style>
+</head>
+<body>
+	<span style="top:20px; left: 20px;" onclick="btn(event, {arrow: true, element: this})" class="button">with arrow, fixed on Y</span>
+	<span style="bottom:20px; right: 20px;" onclick="btn(event, {arrow: true, element: this})" class="button">with arrow, fixed on Y</span>
+	
+	<span style="top:20px; right: 20px;" onclick="btn(event, {highlight: this, arrow: false})" class="button">without arrow</span>
+	<span style="bottom:20px; left: 20px;" onclick="btn(event, {highlight: this, arrow: false})" class="button">without arrow</span>
+	
+	<span style="top:50%; left: 50%; margin-left: -200px" onclick="btn(event, {highlight: this, arrow: false})" class="button">without arrow</span>
+	<span style="top:50%; left: 50%; margin-left: 200px" onclick="btn(event, {arrow: true, element: this})" class="button">with arrow, fixed on Y</span>
+	
+	<span style="top:50%; left: 50%; margin-left: -50px" onclick="btn(event, {arrow: false, element: this})" class="button">without arrow, fixed on Y</span>
+	
+	
+	
+	
+	<span style="top:25%; left: 50%; margin-left: -300px" onclick="btn(event, {arrow: true, element: this, horizontal: 'left'})" class="button">with arrow, fixed on left</span>
+	
+	<span style="top:25%; left: 50%; margin-left: -90px" onclick="btn(event, {element: this, arrow: true, horizontal: 'center', width: '100%'})" class="button">with arrow, width: "100%"</span>
+	
+	<span style="top:25%; left: 50%; margin-left:130px" onclick="btn(event, {arrow: false, element: this, horizontal: 'right', width: '300px'})" class="button">without arrow, fixed on right, width "300px"</span>
+</body>
+<script>
+	var menu = [
+		{
+			text: 'Click me!',
+			onclick: function() {
+				alert('Dring!');
+			}
+		}, {
+			text: 'Oh, a submenu !',
+			sub: [
+				{
+					text: 'Woaw'
+				},
+				{
+					text: 'Another one ?',
+					sub: [
+						{
+							text: "This is crazy"
+						}, {
+							text: "Yes, I can do this all day",
+							sub: [
+								{
+									text: "But I'm exhausted."
+								}, {
+									text: "Oh ! I have to show you something cool!",
+									sub: [
+										{
+											type: "infos",
+											text: "Look at this"
+										},
+										{
+											type: 'html',
+											text: "<div class=\"bidule\">THIS IS HTML =O</div>"
+										}, {
+											type: 'infos',
+											text: "Cool, isn't it ? ^^"
+										}
+									]
+								}
+							]
+						}, {
+							text: "Woaw woaw"
+						}
+					]
+				}
+			]
+		}, {
+			type: 'infos',
+			text: "You can't click me."
+		}
+	]
+	var btn = function(event, opt) {
+		showContextMenu(menu, event, opt);
+	}
+</script>
+</html>
