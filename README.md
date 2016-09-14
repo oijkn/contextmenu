@@ -100,3 +100,24 @@ add margin in pixel
 		left: 0
 	}
 	
+## embeded functions
+### hideContextMenu
+hide all context menu
+```javascript
+hideContextMenu()
+```
+### hideContextMenuChild
+hide submenus after a level
+```javascript
+hideContextMenuChild(0) //hide all submenu
+```
+### addEvents
+add multiple events with addEventListener or attachEvent
+```javascript
+addEvents(window, 'keydown resize dragover click contextmenu DOMMouseScroll wheel mousewheel touch', hideContextMenu);
+```
+### removeEvents
+remove multiple events with removeEventListener or detachEvent
+```javascript
+removeEvents(window, 'keydown resize dragover click contextmenu DOMMouseScroll wheel mousewheel touch', hideContextMenu);
+```
