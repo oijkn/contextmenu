@@ -15,10 +15,10 @@ element.oncontextmenu = function(event) {
 				text: 'submenu 1',
 				sub: [{
 					type: 'infos',	
-					text: '1'
+					text: 'sub submenu 1'
 					}, {
 					type: 'infos',	
-					text: '2'
+					text: 'sub submenu 2'
 				}]
 			}],
 			onclick: function(event) {
