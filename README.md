@@ -58,7 +58,7 @@ submenu, same syntax than menu
 
 ## options
 ### options.arrow
-show an arrow:
+show an arrow, or not:
 true or false, false by default.
 
 	arrow: true
@@ -80,18 +80,18 @@ add 'contextmenu-active' class to element when the menu is active
 	toggleClass: document.getElementById('id')
 	
 ### options.width
-define a width for the menu
+define a width in pixel or percent for the menu
 
 	width: '55%'
 	width: '234px' // (width: '234' id the same)
 	
 ### options.margin
-add margin	
+add margin in pixel	
 
 	margin: {
-		top: 0,
+		top: 5,
 		right: 0,
-		bottom: 0,
+		bottom: 5,
 		left: 0
 	}
 	
