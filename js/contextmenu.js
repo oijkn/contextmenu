@@ -25,6 +25,18 @@ function addEvents(element, events, handler) {
 	}
 }
 
+function removeEvents(element, events, handler) {
+	var events = events.split(' ');
+	for (var i = 0; i < events.length; i++) {
+		if (document.addEventListener) {
+			element.removeEventListener(events[i], handler, false);
+		}
+		else {
+			element.detachEvent('on' + events[i], handler);
+		}
+	}
+}
+
 function hideContextMenuChild(level) {
 	var els = document.querySelectorAll('.contextmenu-container');
 	for (var i = 0; i < els.length; i++) {
