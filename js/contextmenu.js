@@ -130,6 +130,8 @@ function showContextMenu(e, content, args) {
 					newSpan.classList.add('context-menu-sub')
 					var contentSub = content[i].sub;
 					newSpan.onmouseenter = function(e) {
+						let level = (this.parentNode.id).slice(-1);
+						let contentSub = content[level].sub;
 						hideContextMenuChild(containerSubLevel);
 						showContextMenu(e, contentSub, {isSub: containerSubLevel+1, idParent: this.parentNode.id});
 					}
